@@ -54,16 +54,16 @@ export interface IContainer extends BottleContainer {
   loggerService: LoggerService;
 }
 
-export interface IMessage extends Message {}
+export interface IMessage extends Message { }
 
-export interface IUser extends User {}
+export interface IUser extends User { }
 
 export interface IChannelCategory {
   [name: string]: string;
 }
 
-export interface IChannel extends Collection<Snowflake, GuildChannel> {}
-export interface IHttpResponse extends AxiosResponse {}
+export interface IChannel extends Collection<Snowflake, GuildChannel> { }
+export interface IHttpResponse extends AxiosResponse { }
 
 export interface IHandler {
   execute(...args: any[]): Promise<void>;
@@ -138,4 +138,12 @@ export interface ICommandLookup {
 
 export interface IPluginLookup {
   [pluginName: string]: IPlugin;
+}
+
+export const Roles: {[role: string]: number} = {
+  "Suspended": -10,
+  "RegularUser": 0,
+  "Teaching Assistant": 20,
+  "Moderator": 30,
+  "Admin": 40,
 }
